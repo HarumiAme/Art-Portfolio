@@ -83,28 +83,34 @@
 }
 
 /* modal view */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw;
+    /* 90% of the viewport width */
+    max-height: 90vh;
+    /* 90% of the viewport height */
+}
 
-/* Increase modal width */
-.modal-xl {
-    max-width: 90%; /* Width of the modal */
-  }
+/* Ensure the modal content doesn't exceed the viewport size */
+.modal-content {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    /* Max width of the modal dialog */
+    max-height: 100%;
+    /* Max height of the modal dialog */
+}
 
-  /* Limit the modal content height */
-  .modal-content {
-    height: 90vh; /* 90% of the viewport height */
-  }
-
-  /* Ensure the image never exceeds the modal's height and width */
-  .full-size-img {
-    max-height: 81.5vh; /* Maximum height is 85% of the viewport height */
-    max-width: 100%; /* Maximum width is the full width of the modal */
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  /* Ensure the image fits within the modal on smaller screens */
-  @media (max-width: 768px) {
-    .full-size-img {
-      max-height: 75vh; /* Limit height even more on small screens */
-    }
-  }
+/* Ensure the image scales appropriately while maintaining aspect ratio */
+#fullImage {
+    max-width: 100%;
+    /* Limit the image width to fit within the modal */
+    max-height: 90vh;
+    /* Limit the image height to 90% of the viewport height */
+    width: auto;
+    /* Ensure aspect ratio is maintained */
+    height: auto;
+    /* Ensure aspect ratio is maintained */
+}

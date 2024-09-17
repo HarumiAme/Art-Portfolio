@@ -292,14 +292,14 @@
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="imageModalLabel">Full Image</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <img id="fullImage" src="" class="img-fluid full-size-img" alt="Full-size Image">
+        <img id="fullImage" src="" class="img-fluid" alt="Full-size Image">
       </div>
     </div>
   </div>
@@ -310,9 +310,14 @@
   imageModal.addEventListener('show.bs.modal', function (event) {
     var button = event.relatedTarget; // Button that triggered the modal
     var imageUrl = button.getAttribute('data-bs-image'); // Extract image URL from data-bs-image attribute
-    
-    // Update the modal image source
     var modalImage = document.getElementById('fullImage');
+
+    // Load the image
+    modalImage.onload = function () {
+      // Now, the image will be scaled to fit within the modal based on CSS rules
+    };
+
+    // Update the modal image source
     modalImage.src = imageUrl;
   });
 </script>
