@@ -96,7 +96,7 @@
 
   /* Ensure the image never exceeds the modal's height and width */
   .full-size-img {
-    max-height: 80vh; /* Maximum height is 85% of the viewport height */
+    max-height: 81.5vh; /* Maximum height is 85% of the viewport height */
     max-width: 100%; /* Maximum width is the full width of the modal */
     width: auto; /* Maintain aspect ratio */
     height: auto; /* Maintain aspect ratio */
